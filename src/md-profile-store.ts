@@ -8,7 +8,7 @@ export class MDProfileStore {
     constructor(profileStoreData: any) {
         this.id = profileStoreData['id'] || null;
         this.title = LanguageFactory.getTextFromTextWithLanguage(profileStoreData['title']);
-        this.creator = LanguageFactory.getTextFromTextWithLanguage(profileStoreData['creator']);
+        this.creator = profileStoreData['creator'];
         this.profiles = [];
         if (profileStoreData['profiles']) {
             this.profiles = profileStoreData['profiles'];

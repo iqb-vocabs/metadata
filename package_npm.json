@@ -1,6 +1,6 @@
 {
   "name": "@iqb/metadata",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "author": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
   "license": "MIT",
   "description": "Data interfaces and classes for metadata management",
