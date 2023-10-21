@@ -1,0 +1,17 @@
+{
+  "name": "@iqb/metadata",
+  "version": "0.2.0",
+  "author": "IQB - Institut zur Qualitätsentwicklung im Bildungswesen",
+  "license": "MIT",
+  "description": "Data interfaces and classes for metadata management",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iqb-vocabs/metadata.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iqb-vocabs/metadata/issues"
+  },
+  "homepage": "https://github.com/iqb-vocabs/metadata#readme",
+  "main": "index.js",
+  "types": "index.d.ts"
+}
