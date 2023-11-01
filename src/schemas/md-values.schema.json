@@ -37,7 +37,7 @@
             ]
           },
           "valueAsText": {
-            "$ref": "#/definitions/multi_language_text",
+            "type": "string",
             "description": "This textual representation of the value enables UI-components to show the value without resolving profiles and vocabularies. Use '\n' for new line."
           }
         },
