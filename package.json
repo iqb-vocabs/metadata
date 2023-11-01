@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "validate_schemas": "ts-node ci/validate.ts",
-    "generate_docs": "asyncapi generate fromTemplate json_schema/asyncapi.yaml @asyncapi/html-template -o ./public --force-write && cat json_schema/add.css >> ./public/css/global.min.css",
+    "generate_docs": "asyncapi generate fromTemplate ci/asyncapi.yaml @asyncapi/html-template -o ./docs --force-write && cat ci/add.css >> ./docs/css/global.min.css",
     "prepare_publish": "rm -rf dist/* && tsc && cp ./package_npm.json ./dist/package.json && cp ./README.md ./dist",
     "npm_publish": "cd dist && npm publish --access public"
   },

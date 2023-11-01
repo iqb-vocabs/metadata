@@ -1,0 +1,29 @@
+asyncapi: 2.5.0
+info:
+  title: Object specifications for response data
+  description: |
+    The web applications of IQB use a flexible metadata system. The data structures described below help to implement components and libraries to edit, store and process these values.
+    
+    Go to the Schema section of this document and select one schema. Expand all nodes and explore.
+  version: 0.4.0
+  license:
+    name: CC BY-SA 4.0
+    url: https://creativecommons.org/licenses/by-sa/4.0/
+  contact:
+    name: Institute for Educational Quality Improvement (IQB)
+    url: https://www.iqb.hu-berlin.de
+    email: iqb-tbadev@hu-berlin.de
+channels:
+  iqb_data_structures:
+    subscribe:
+      operationId: 'Please select one schema'
+      message:
+        messageId: select_schema
+components:
+  schemas:
+    metadata-profile:
+      $ref: 'https://raw.githubusercontent.com/iqb-vocabs/metadata/master/src/schemas/md-profile.schema.json'
+    profile-store:
+      $ref: 'https://raw.githubusercontent.com/iqb-vocabs/metadata/master/src/schemas/md-profile-store.schema.json'
+    metadata-values:
+      $ref: 'https://raw.githubusercontent.com/iqb-vocabs/metadata/master/src/schemas/md-values.schema.json'
