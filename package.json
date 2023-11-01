@@ -11,6 +11,8 @@
   "devDependencies": {
     "@types/node": "^20.4.4",
     "ajv": "^8.12.0",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "@asyncapi/cli": "^0.51.4",
+    "@asyncapi/html-template": "^0.28.3"
   }
 }

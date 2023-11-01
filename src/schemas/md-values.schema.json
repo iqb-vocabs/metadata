@@ -91,7 +91,7 @@
             "description": "Text if additional input is expected"
           }
         },
-        "required": ["id", "text"]
+        "required": ["id"]
       }
     }
   }
