@@ -40,6 +40,10 @@
                 }
               }
             ]
+          },
+          "valueAsText": {
+            "$ref": "#/definitions/multi_language_text",
+            "description": "This textual representation of the value enables UI-components to show the value without resolving profiles and vocabularies."
           }
         },
         "required": ["id", "value"]
