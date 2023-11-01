@@ -2,3 +2,5 @@
 [![npm](https://img.shields.io/npm/v/%40iqb%2Fmetadata)](https://www.npmjs.com/package/@iqb/metadata)
 
 This module provides definitions and classes for metadata management at [IQB](https://www.iqb.hu-berlin.de).
+
+Please have a look at the type definitions as [Html file](docs/index.html). To learn about the value types produces by different profile entries [look here](docs/value-types.md). 
