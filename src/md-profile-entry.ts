@@ -28,7 +28,7 @@ export class ProfileEntryParametersText {
     constructor(profileEntryParameters: any) {
         this.format = profileEntryParameters['format'] || '';
         this.pattern = profileEntryParameters['pattern'] || '';
-        this.textLanguages = profileEntryParameters['textLanguages'] || [];
+        this.textLanguages = profileEntryParameters['textLanguages'] || ['de'];
     }
 }
 

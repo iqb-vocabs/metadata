@@ -31,19 +31,14 @@
                 "$ref": "#/definitions/multi_language_text_with_id"
               },
               {
-                "type": "string"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+                "type": "string",
+                "description": "Used for storing numbers and boolean ('true', 'false') only."
               }
             ]
           },
           "valueAsText": {
             "$ref": "#/definitions/multi_language_text",
-            "description": "This textual representation of the value enables UI-components to show the value without resolving profiles and vocabularies."
+            "description": "This textual representation of the value enables UI-components to show the value without resolving profiles and vocabularies. Use '\n' for new line."
           }
         },
         "required": ["id", "value"]
@@ -58,6 +53,7 @@
   "definitions": {
     "multi_language_text": {
       "type": "array",
+      "description": "Used for storing the input of texts. This type applies also in cases when only one language is used.",
       "items": {
         "type": "object",
         "properties": {
@@ -79,12 +75,13 @@
     },
     "multi_language_text_with_id": {
       "type": "array",
+      "description": "Used for storing the selection of vocabulary entries and (optional) additional texts.",
       "items": {
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
-            "description": "Id of the vocabulary entry"
+            "description": "Full id of the vocabulary entry as url - including the vocabulary url"
           },
           "text": {
             "$ref": "#/definitions/multi_language_text",
@@ -92,7 +89,8 @@
           }
         },
         "required": ["id"]
-      }
+      },
+      "minItems": 1
     }
   }
 }

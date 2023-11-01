@@ -19,7 +19,7 @@
           "value": "BiSta inhaltsbezogen sekundär"
         }
       ],
-      "value": ["e2t", "r5z", "kk3"]
+      "value": [{"id": "e2t"}, {"id": "r2t"}, {"id": "e3t", "text": [{"lang":  "de", "value":  "Schnuckelchen"}]}]
     },
     {
       "id": "pr2",
