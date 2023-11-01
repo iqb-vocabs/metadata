@@ -3,4 +3,4 @@
 
 This module provides definitions and classes for metadata management at [IQB](https://www.iqb.hu-berlin.de).
 
-Please have a look at the type definitions as [Html file](https://iqb-vocabs.github.io/metadata). To learn about the value types produces by different profile entries [look here](https://github.com/iqb-vocabs/metadata/docs/value-types.md). 
+Please have a look at the type definitions as [Html file](https://iqb-vocabs.github.io/metadata). To learn about the value types produces by different profile entries [look here](https://github.com/iqb-vocabs/metadata/blob/master/docs/value-types.md). 
