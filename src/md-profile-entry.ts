@@ -87,16 +87,16 @@ export class MDProfileEntry {
         if (this.parameters && this.type) {
             if (this.parameters && this.type) {
                 if (this.type === 'number') {
-                    const p = new ProfileEntryParametersNumber(this.parameters);
+                    const p = this.parameters as ProfileEntryParametersNumber;
                     returnText = `Kommastellen: ${p.digits}, Mindestwert: ${p.minValue === null ? 'kein' : p.minValue}, Maximalwert: ${p.maxValue === null ? 'kein' : p.maxValue}${p.isPeriodSeconds ? ', als Sekunden' : ''}`
                 } else if (this.type === 'text') {
-                    const p = new ProfileEntryParametersText(this.parameters);
+                    const p = this.parameters as ProfileEntryParametersText;
                     returnText = `${profileEntryTextFormatAsText[p.format]}, Sprache(n): ${p.textLanguages.join('/')}${p.pattern ? ', Gültigkeitsmuster: ' + p.pattern : ''}`
                 } else if (this.type === 'boolean') {
-                    const p = new ProfileEntryParametersBoolean(this.parameters);
+                    const p = this.parameters as ProfileEntryParametersBoolean;
                     returnText = `Text für WAHR: ${p.trueLabel}, Text für FALSCH: ${p.falseLabel}`
                 } else if (this.type === 'vocabulary') {
-                    const p = new ProfileEntryParametersVocabulary(this.parameters);
+                    const p = this.parameters as ProfileEntryParametersVocabulary;
                     const levelText = p.maxLevel > 1 ? ', Zeige nur erste ' + p.maxLevel + ' Ebenen' : ', Zeige nur erste Ebene';
                     returnText = `url: '${p.url}', ${p.allowMultipleValues ? 'Mehrfachauswahl' : 'Einmalauswahl'}${p.maxLevel > 0 ? levelText : ''}${p.hideNumbering ? ', verberge Nummerierung' : ''}${p.hideTitle ? ', verberge Titel' : ''}${p.hideDescription ? ', verberge Beschreibung' : ''}${p.addTextLanguages && p.addTextLanguages.length > 0 ? ', mit Texteingabe in Sprache(n): ' + p.addTextLanguages.join('/') : ''}`
                 }

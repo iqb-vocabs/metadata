@@ -26,7 +26,7 @@ export const profileEntryTextFormatAsText: { [key: string]: string } = {
 
 export class LanguageFactory {
     static lang = "de";
-    static getTextFromTextWithLanguage(langArray: any | null): string {
+    static getTextFromTextWithLanguage(langArray: any | null | undefined): string {
         if (langArray) {
             const langArrayTyped: TextWithLanguage[] = langArray;
             const textEntry = langArrayTyped.find(t => t.lang === LanguageFactory.lang);
