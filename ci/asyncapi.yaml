@@ -1,6 +1,6 @@
 asyncapi: 2.5.0
 info:
-  title: Object specifications for response data
+  title: Object specifications for metadata management @ IQB
   description: |
     The web applications of IQB use a flexible metadata system. The data structures described below help to implement components and libraries to edit, store and process these values.
     
