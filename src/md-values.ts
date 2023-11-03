@@ -9,7 +9,7 @@ export class MDValue {
     readonly id: string;
     readonly label: TextWithLanguage[];
     value: TextsWithLanguageAndId[] | TextWithLanguage[] | string | null = null;
-    valueAsText: string = '';
+    valueAsText: TextWithLanguage[] = [];
 
     constructor(id: string, label: TextWithLanguage[]) {
         this.id = id;

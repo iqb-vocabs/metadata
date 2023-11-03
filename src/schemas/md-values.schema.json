@@ -19,8 +19,7 @@
             "description": "Id of the profile entry related to these data"
           },
           "label": {
-            "$ref": "#/definitions/multi_language_text",
-            "description": "Copy of the label of the profile entry. This redundant data helps to read/print the entry without resolving."
+            "$ref": "#/definitions/multi_language_text"
           },
           "value": {
             "anyOf": [
@@ -37,8 +36,7 @@
             ]
           },
           "valueAsText": {
-            "type": "string",
-            "description": "This textual representation of the value enables UI-components to show the value without resolving profiles and vocabularies. Use '\n' for new line."
+            "$ref": "#/definitions/multi_language_text"
           }
         },
         "required": ["id", "value"]
@@ -84,8 +82,7 @@
             "description": "Full id of the vocabulary entry as url - including the vocabulary url"
           },
           "text": {
-            "$ref": "#/definitions/multi_language_text",
-            "description": "Text if additional input is expected"
+            "$ref": "#/definitions/multi_language_text"
           }
         },
         "required": ["id"]
