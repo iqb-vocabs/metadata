@@ -1,4 +1,4 @@
-import {LanguageFactory} from "./md-main";
+import {LanguageFactory, profileEntryTextFormatAsText} from "./md-main";
 
 export class ProfileEntryParametersVocabulary {
     readonly url: string;
@@ -34,20 +34,16 @@ export class ProfileEntryParametersText {
 
 export class ProfileEntryParametersNumber {
     readonly digits: number;
-    readonly minValue: number | null;
-    readonly maxValue: number | null;
+    readonly minValue: number | null = null;
+    readonly maxValue: number | null = null;
     readonly isPeriodSeconds: boolean;
 
     constructor(profileEntryParameters: any) {
         this.digits = profileEntryParameters['digits'] || 0;
-        if (profileEntryParameters['minValue'] === null) {
-            this.minValue = null;
-        } else {
+        if (typeof profileEntryParameters['minValue'] === 'number') {
             this.minValue = profileEntryParameters['minValue'];
         }
-        if (profileEntryParameters['maxValue'] === null) {
-            this.maxValue = null;
-        } else {
+        if (typeof profileEntryParameters['maxValue'] === 'number') {
             this.maxValue = profileEntryParameters['maxValue'];
         }
         this.isPeriodSeconds = profileEntryParameters['isPeriodSeconds'] || false;
@@ -85,5 +81,26 @@ export class MDProfileEntry {
                 this.parameters = new ProfileEntryParametersVocabulary(entryData['parameters']);
             }
         }
+    }
+    getParametersAsText(): string {
+        let returnText = '';
+        if (this.parameters && this.type) {
+            if (this.parameters && this.type) {
+                if (this.type === 'number') {
+                    const p = new ProfileEntryParametersNumber(this.parameters);
+                    returnText = `Kommastellen: ${p.digits}, Mindestwert: ${p.minValue === null ? 'kein' : p.minValue}, Maximalwert: ${p.maxValue === null ? 'kein' : p.maxValue}${p.isPeriodSeconds ? ', als Sekunden' : ''}`
+                } else if (this.type === 'text') {
+                    const p = new ProfileEntryParametersText(this.parameters);
+                    returnText = `${profileEntryTextFormatAsText[p.format]}, Sprache(n): ${p.textLanguages.join('/')}${p.pattern ? ', Gültigkeitsmuster: ' + p.pattern : ''}`
+                } else if (this.type === 'boolean') {
+                    const p = new ProfileEntryParametersBoolean(this.parameters);
+                    returnText = `Text für WAHR: ${p.trueLabel}, Text für FALSCH: ${p.falseLabel}`
+                } else if (this.type === 'vocabulary') {
+                    const p = new ProfileEntryParametersVocabulary(this.parameters);
+                    returnText = `url: '${p.url}', ${p.allowMultipleValues ? 'Mehrfachauswahl' : 'Einmalauswahl'}${p.maxLevel > 0 ? ', Zeige nur erste ' + p.maxLevel + 'Ebene(n)': ''}${p.hideNumbering ? ', verberge Nummerierung' : ''}${p.hideTitle ? ', verberge Titel' : ''}${p.hideDescription ? ', verberge Beschreibung' : ''}${p.addTextLanguages && p.addTextLanguages.length > 0 ? ', mit Texteingabe in Sprache(n): ' + p.addTextLanguages.join('/') : ''}`
+                }
+            }
+        }
+        return returnText;
     }
 }

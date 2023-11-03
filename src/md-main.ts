@@ -11,6 +11,19 @@ export interface TextWithLanguage {
     "value": string
 }
 
+export const profileEntryTypeAsText: { [key: string]: string } = {
+    "number": "Zahl",
+    "boolean": "Ja/Nein",
+    "vocabulary": "Vokabular",
+    "text": "Text"
+}
+
+export const profileEntryTextFormatAsText: { [key: string]: string } = {
+    "single": "Einzeilig",
+    "multiline": "Mehrzeilig",
+    "html": "Html/formatierter Text"
+}
+
 export class LanguageFactory {
     static lang = "de";
     static getTextFromTextWithLanguage(langArray: any | null): string {
