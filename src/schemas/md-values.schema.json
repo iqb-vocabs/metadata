@@ -9,6 +9,10 @@
       "type": "string",
       "description": "Identifier for the metadata profile"
     },
+    "isCurrent": {
+      "type": "boolean",
+      "description": "If true, this profile is recognised as the currently used profile for the data object."
+    },
     "entries": {
       "type": "array",
       "items": {
