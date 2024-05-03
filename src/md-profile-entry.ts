@@ -98,7 +98,7 @@ export class MDProfileEntry {
                 } else if (this.type === 'vocabulary') {
                     const p = this.parameters as ProfileEntryParametersVocabulary;
                     const levelText = p.maxLevel > 1 ? ', Zeige nur erste ' + p.maxLevel + ' Ebenen' : ', Zeige nur erste Ebene';
-                    returnText = `url: '${p.url}', ${p.allowMultipleValues ? 'Mehrfachauswahl' : 'Einmalauswahl'}${p.maxLevel > 0 ? levelText : ''}${p.hideNumbering ? ', verberge Nummerierung' : ''}${p.hideTitle ? ', verberge Titel' : ''}${p.hideDescription ? ', verberge Beschreibung' : ''}${p.addTextLanguages && p.addTextLanguages.length > 0 ? ', mit Texteingabe in Sprache(n): ' + p.addTextLanguages.join('/') : ''}`
+                    returnText = `url: '${p.url}', ${p.allowMultipleValues ? 'Mehrfachauswahl' : 'Einmalauswahl'}${p.maxLevel > 0 ? levelText : ''}${p.hideNumbering ? ', Nummerierung unterdrückt' : ''}${p.hideTitle ? ', Titel unterdrückt' : ''}${p.hideDescription ? ', Beschreibung unterdrückt' : ''}${p.addTextLanguages && p.addTextLanguages.length > 0 ? ', mit Texteingabe in Sprache(n): ' + p.addTextLanguages.join('/') : ''}`
                 }
             }
         }
